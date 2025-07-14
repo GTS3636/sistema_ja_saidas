@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js" defer></script>
+  <title>Sistema de Gerenciamento de Saídas</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Sistema de Gerenciamento de Saídas</h1>
+    </header>
+
+    <section class="content">
+      <aside class="sidebar">
+        <h2>Lista de Alunos fora da sala</h2>
+        <ul id="sidebarList">
+          <!-- Linhas vazias simulando slots -->
+        </ul>
+      </aside>
+
+      <main class="main">
+        <div class="service-selection">
+          <label>Seleção de serviço</label>
+          <select id="selectionPages">
+            <option value="none">Selecione uma opção</option>
+            <option value="aluno">Aluno</option>
+            <option value="saida">Saída</option>
+            <option value="professor">Professor</option>
+          </select>
+          <select id="selectionServices">
+            <option value="none">Selecione um serviço</option>
+            <option value="cadastrar">Cadastrar</option>
+            <option value="listar">Listar</option>
+            <option value="consultar">Consultar</option>
+            <option value="atualizar">Atualizar</option>
+            <option value="deletar">Deletar</option>
+          </select>
+        </div>
+
+        <div class="card" id="card">
+
+        </div>
+      </main>
+    </section>
+
+    <footer>
+      Projetado e desenvolvido por Guilherme Tomaz Silva
+    </footer>
+  </div>
+</body>
+
+</html>
