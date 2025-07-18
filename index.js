@@ -513,63 +513,6 @@ export async function insertIntoList() {
         })
 }
 
-export async function saidaHandler(aluno) {
-    if (!aluno) {
-        alert("Por favor, informe o nome do(a) aluno(a) para verificar a saída.");
-        return false;
-    }
-
-    try {
-        const resp = await fetch("http://localhost:8081/saida");
-        if (!resp.ok) {
-            throw new Error("Erro na resposta do servidor ao consultar as saídas");
-        }
-        const saidas = await resp.json()
-
-        if (saidas.length === 0) {
-            // Nenhuma saída cadastrada ainda
-            return
-        }
-
-        const alunoExistente = saidas.find(alu => alu.nomeAluno === aluno)
-        if (!alunoExistente) {
-            alert(`Aluno ${aluno} não encontrado. Verifique o nome informado.`)
-            return false
-        }
-
-        const agora = new Date()
-        const saidaAt = new Date(
-            `${alunoExistente.dataSaida || agora.toISOString().split('T')[0]}T${alunoExistente.horaSaida}`
-        );
-        const diffMin = (agora - saidaAt) / 1000 / 60 // diferença em minutos
-
-        if (alunoExistente.status === "reprovado") {
-            if (diffMin < 5) {
-                alert(`O(a) aluno(a) ${aluno} foi reprovado(a) recentemente, só pode sair após 5 min.`)
-                return false
-            }
-            return true
-        }
-
-        if (alunoExistente.status === "finalizado") {
-            if (diffMin < 45) {
-                alert(`O(a) aluno(a) ${aluno} retornou há menos de 45 min; saída bloqueada.`)
-                return false
-            }
-            const confirma = confirm(`Já passou 45 min desde o retorno de ${aluno}. Liberar saída?`)
-            return confirma
-        }
-
-        alert(`O(a) aluno(a) ${aluno} ainda não retornou ou não está finalizado; saída bloqueada.`);
-        return false
-
-    } catch (err) {
-        console.error("Erro em saidaHandler:", err);
-        alert("Erro ao consultar as saídas. Verifique a conexão.");
-        return false;
-    }
-}
-
 insertIntoList()
 const intervalId = setInterval(async () => {
     try {
@@ -578,6 +521,5 @@ const intervalId = setInterval(async () => {
         console.error("Falha ao atualizar lista:", err)
     }
 }, 30000)
-
 
 clearInterval(intervalId)
