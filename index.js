@@ -337,11 +337,10 @@ lista.addEventListener('click', async e => {
         case 'aprovar': {
             let horaSaida = new Date().toISOString().split('T')[1].split('.')[0];
             return enviarSaida({
-                horaSaida: horaSaida,
                 status: "aprovado",
                 aluno_cod: Number(codAluno),
                 professor_cod: Number(codProfessor),
-                horaSaida: horaSaida = new Date().toLocaleTimeString("pt-BR"),
+                horaSaida: horaSaida,
                 horaRetorno: horaRetorno && horaRetorno !== "null" ? horaRetorno : null,
                 motivo: motivo,
                 localDestino: localDestino,
