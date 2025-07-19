@@ -8,7 +8,7 @@ export function consultarProfessor() {
     consultarProfessor.addEventListener("click", async e => {
         e.preventDefault()
 
-        let id = document.getElementById("id").value
+        let id = document.getElementById("idProfessor").value
 
         if (!id || isNaN(id) || id <= 0 || undefined || null) {
             alert("Por favor, informe o ID do professor.")

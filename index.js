@@ -251,7 +251,7 @@ function controleMenu() {
             <label for="emailProfessor">Email do Professor: </label><br>
             <input type="email" id="emailProfessor" placeholder="Email do professor..." required><br><br>
 
-            <button id="cadastrarProfessor">Cadastrar</button>
+            <button id="cadastrar">Cadastrar</button>
             <div id="res"></div>
             `
             cadastrarProfessor()
@@ -291,7 +291,7 @@ function controleMenu() {
             <label for="idProfessor">ID do Professor: </label><br>
             <input type="text" id="idProfessor" placeholder="ID do professor..." required><br><br>
 
-            <button id="deletarProfessor">Deletar</button>
+            <button id="deletar">Deletar</button>
             <div id="res"></div>
             `
             deletarProfessor()

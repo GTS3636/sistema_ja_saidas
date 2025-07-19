@@ -1,6 +1,6 @@
 export function deletarProfessor() {
     let res = document.getElementById("res")
-    let deletarProfessor = document.getElementById("deletarProfessor")
+    let deletarProfessor = document.getElementById("deletar")
 
     deletarProfessor.addEventListener("click", e => {
         e.preventDefault()
@@ -9,7 +9,7 @@ export function deletarProfessor() {
         deletarProfessor.textContent = "Deletando..."
         res.innerHTML = `<label>Deletando...</label>`
 
-        let id = document.getElementById("id").value
+        let id = document.getElementById("idProfessor").value
 
         fetch(`http://localhost:8081/professor/${id}`, {
             method: "DELETE"

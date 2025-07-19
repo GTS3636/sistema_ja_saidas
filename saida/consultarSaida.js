@@ -1,3 +1,4 @@
+import { insertIntoList } from "../index.js"
 export function consultarSaida() {
     let res = document.getElementById("res")
     let consultarSaida = document.getElementById("consultarSaida")

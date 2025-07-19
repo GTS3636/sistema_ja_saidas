@@ -28,7 +28,7 @@ export function atualizarProfessor() {
         telefone.disabled = false
         email.disabled = false
 
-        let id = document.getElementById("id").value
+        let id = document.getElementById("idProfessor").value
         await fetch(`http://localhost:8081/professor/${id}`)
             .then(resp => {
                 if (!resp.ok) throw new Error("Erro na resposta do servidor ao consultar o professor");
@@ -82,7 +82,7 @@ export function atualizarProfessor() {
     atualizarProfessor.addEventListener("click", async e => {
         e.preventDefault()
 
-        let id = document.getElementById("id").value
+        let id = document.getElementById("idProfessor").value
 
         const valores = {
             nome: nome.value,

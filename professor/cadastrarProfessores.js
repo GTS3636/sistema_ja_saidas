@@ -1,6 +1,6 @@
 export function cadastrarProfessor() {
     let res = document.getElementById("res")
-    let cadastrarProfessor = document.getElementById("cadastrarProfessor")
+    let cadastrarProfessor = document.getElementById("cadastrar")
 
     cadastrarProfessor.addEventListener("click", async e => {
         e.preventDefault()
